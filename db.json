@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "name": "ewtrwerwertew",
+      "email": "erwetr4r4wr",
+      "phone": "",
+      "address": 2323423,
+      "services": "324234234"
+    },
+    {
+      "id": 5,
+      "name": "1",
+      "email": "2",
+      "phone": "",
+      "address": "4",
+      "services": "5"
+    },
+    {
+      "id": 7,
+      "name": "abc",
+      "email": "def",
+      "phone": 123,
+      "address": "ghi",
+      "services": "jkl"
+    },
+    {
+      "id": 8,
+      "name": "muhib",
+      "email": "bangsj",
+      "phone": null,
+      "address": "23423",
+      "services": "234234"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
