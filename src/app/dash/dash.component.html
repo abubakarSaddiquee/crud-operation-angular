@@ -18,7 +18,13 @@
   <div class="container-fluid py-5">
     <h1 class="display-5 fw-bold">REstaurent Record Data</h1>
     <p class="col-md-8 fs-4">You can save Records</p>
-    <button class="btn btn-primary btn-lg" type="button">Testycodeeiz</button>
+    <button
+      (click)="clickAddResto()"
+      class="btn btn-primary btn-lg"
+      type="button"
+    >
+      Testycodeeiz
+    </button>
   </div>
 </div>
 
@@ -49,7 +55,7 @@
           type="button"
           class="btn btn-success"
           data-bs-toggle="modal"
-          data-bs-target="#exampleEditModal"
+          data-bs-target="#exampleModal"
           (click)="onEditResto(data)"
         >
           Edit
@@ -144,104 +150,23 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary" (click)="addResto()">
-          Add details
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Edit Modal -->
-<div
-  class="modal fade"
-  id="exampleEditModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit record</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-
-      <div class="modal-body">
-        <form [formGroup]="formValue">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name</label>
-            <input
-              type="email"
-              formControlName="name"
-              class="form-control"
-              id="exampleInputName"
-              aria-describedby="nameHelp"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Email</label>
-            <input
-              type="email"
-              formControlName="email"
-              class="form-control"
-              id="exampleInputEmail"
-            />
-          </div>
-
-          <label for="exampleInputEmail1" class="form-label">Phone</label>
-          <input
-            type="number"
-            formControlName="phone"
-            class="form-control"
-            id="exampleInputPhone"
-            aria-describedby="phoneHelp"
-          />
-
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Address</label
-            >
-            <input
-              type="text"
-              formControlName="address"
-              class="form-control"
-              id="exampleInputAdress"
-            />
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"
-              >Services</label
-            >
-
-            <input
-              type="text"
-              formControlName="services"
-              class="form-control"
-              id="exampleInputServices"
-            />
-          </div>
-        </form>
-      </div>
-
-      <div class="modal-footer">
         <button type="button" id="clear" class="btn btn-warning">Clear</button>
 
-        <button type="button" class="btn btn-primary" (click)="addResto()">
-          Add Details
+        <button
+          *ngIf="showAdd"
+          type="button"
+          class="btn btn-danger"
+          (click)="addResto()"
+        >
+          Add details
         </button>
 
-        <button type="button" class="btn btn-primary" (click)="updateResto()">
+        <button
+        *ngIf="showEdit"
+          type="button"
+          class="btn btn-primary"
+          (click)="updateResto()"
+        >
           Update details
         </button>
       </div>

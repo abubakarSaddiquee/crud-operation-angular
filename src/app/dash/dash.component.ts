@@ -10,7 +10,10 @@ import { Dashdata } from './dash.model';
 })
 export class DashComponent implements OnInit {
   formValue: FormGroup;
-  allRestaurntData;
+  allRestaurntData: any;
+
+  showAdd!: boolean;
+  showEdit!: boolean;
 
   restaurentModelObj: Dashdata = new Dashdata();
 
@@ -25,6 +28,13 @@ export class DashComponent implements OnInit {
       services: [''],
     });
     this.getAllData();
+  }
+
+  clickAddResto() {
+    this.formValue.reset();
+
+    this.showAdd = true;
+    this.showEdit = false;
   }
 
   addResto() {
@@ -85,6 +95,9 @@ export class DashComponent implements OnInit {
   }
 
   onEditResto(data: any) {
+    this.showAdd = false;
+    this.showEdit = true;
+
     this.restaurentModelObj.id = data.id;
 
     this.formValue.controls['name'].setValue(data.name);
